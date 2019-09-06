@@ -1,0 +1,41 @@
+{
+  "name": "api_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server.js",
+    "dev": "nodemon --watch src server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2",
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "node-emoji": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test"
+    }
+  },
+  "nodemonConfig": {
+    "ext": "* .pde",
+    "verbose": false,
+    "events": {
+      "start": "cls || clear"
+    }
+  }
+}
