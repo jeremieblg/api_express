@@ -1,8 +1,14 @@
 const request = require("supertest");
-const app = require("../app.js");
+const app = require("../src/app.js");
 describe("Test the root path", () => {
   test("It should response the GET method", async () => {
     const response = await request(app).get("/");
-    expect(response.statusCode).toBe(200);
-  });
+    await expect(response.statusCode).toBe(200);
+    // beforeEach(async () => {
+    // });
+  }, 30000);
+});
+
+afterAll(async done => {
+  done();
 });
