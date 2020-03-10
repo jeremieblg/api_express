@@ -5,19 +5,24 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js",
-    "dev": "nodemon --watch src server.js"
+    "start:dev": "NODE_ENV=development webpack",
+    "run:dev": "NODE_ENV=development nodemon build/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "superagent": "^5.1.0",
     "supertest": "^4.0.2",
-    "nodemon": "^1.19.2"
+    "@types/node": "^13.1.8",
+    "nodemon": "^2.0.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -30,13 +35,6 @@
     "hooks": {
       "pre-commit": "npm run test",
       "pre-push": "npm run test"
-    }
-  },
-  "nodemonConfig": {
-    "ext": "* .pde",
-    "verbose": false,
-    "events": {
-      "start": "cls || clear"
     }
   }
 }

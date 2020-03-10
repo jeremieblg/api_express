@@ -1,5 +1,5 @@
 //server.js
-const app = require("./src/app");
+const app = require("./app");
 const chalk = require("chalk");
 const emoji = require("node-emoji");
 
